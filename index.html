@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NE England Water Quality Explorer</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Serif+4:ital,wght@0,300;1,300&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'IBM Plex Mono',monospace;background:#f0f6fb;color:#0d1f2d;min-height:100vh;display:flex;flex-direction:column;}
+header{background:#0d1f2d;padding:2.5rem 6vw 2rem;}
+.eyebrow{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.7rem;}
+h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,4.5rem);letter-spacing:.06em;color:#fff;line-height:1;margin-bottom:.5rem;}
+h1 span{color:#1e88e5;}
+.tagline{font-size:.75rem;color:rgba(255,255,255,.4);letter-spacing:.06em;}
+main{flex:1;padding:4rem 6vw;max-width:960px;}
+.section-rule{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;}
+.section-rule::before{content:'';width:28px;height:2px;background:#1565a0;flex-shrink:0;}
+.section-rule span{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#5a7a92;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;}
+.card{background:#fff;border:1.5px solid #b8d4e8;text-decoration:none;color:#0d1f2d;display:block;transition:border-color .2s,box-shadow .2s;overflow:hidden;}
+.card:hover{border-color:#1565a0;box-shadow:0 4px 20px rgba(21,101,160,0.12);}
+.card-img{height:200px;background-size:cover;background-position:center;position:relative;}
+.card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,31,45,0) 50%,rgba(13,31,45,0.6) 100%);}
+.card-body{padding:1.4rem 1.4rem 1.6rem;}
+.card-kicker{font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:#5a7a92;margin-bottom:.5rem;}
+.card-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.06em;color:#0d1f2d;line-height:1;margin-bottom:.5rem;}
+.card-title span{color:#1565a0;font-size:.52em;display:block;letter-spacing:.1em;}
+.card-meta{font-size:.65rem;color:#5a7a92;line-height:1.7;margin-bottom:1rem;}
+.card-cta{display:inline-flex;align-items:center;gap:.5rem;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#1565a0;border-bottom:1px solid #b8d4e8;padding-bottom:.15rem;transition:border-color .2s;}
+.card:hover .card-cta{border-color:#1565a0;}
+.info{margin-top:3rem;padding:1.2rem 1.4rem;border-left:2px solid #b8d4e8;font-size:.68rem;color:#5a7a92;line-height:1.8;}
+.info strong{color:#0d1f2d;}
+footer{padding:1.4rem 6vw;border-top:1.5px solid #b8d4e8;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;}
+.ft{font-family:'Bebas Neue',sans-serif;font-size:.9rem;letter-spacing:.1em;}
+.fm{font-size:.57rem;color:#5a7a92;}
+.fm a{color:#1565a0;text-decoration:none;border-bottom:1px solid currentColor;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Environment Agency Open Data &middot; North East England</div>
+  <h1>Water Quality <span>Explorer</span></h1>
+  <div class="tagline">Interactive monitoring data for NE England river catchments &middot; 2000&ndash;2026</div>
+</header>
+
+<main>
+  <div class="section-rule"><span>Select a catchment</span></div>
+
+  <div class="cards">
+
+    <a class="card" href="blyth.html">
+      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop')"></div>
+      <div class="card-body">
+        <div class="card-kicker">Northumberland</div>
+        <div class="card-title">River <span>Blyth</span></div>
+        <div class="card-meta">
+          153 monitoring sites &middot; 55,000+ observations<br>
+          2000&ndash;2026 &middot; River, STW, CSO, industrial, groundwater
+        </div>
+        <div class="card-cta">Explore data &rarr;</div>
+      </div>
+    </a>
+
+    <a class="card" href="derwent.html">
+      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1444464666168-49d633b86797?w=800&q=80&auto=format&fit=crop')"></div>
+      <div class="card-body">
+        <div class="card-kicker">County Durham / Northumberland</div>
+        <div class="card-title">River <span>Derwent</span></div>
+        <div class="card-meta">
+          106 monitoring sites &middot; 83,000+ observations<br>
+          2000&ndash;2026 &middot; River, STW, minewater, WTW, industrial
+        </div>
+        <div class="card-cta">Explore data &rarr;</div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="info">
+    <strong>How to use:</strong> Select a catchment above to open its interactive explorer. Filter by site group or individual site, choose a parameter, set a WFD threshold, and click Update chart. Use Ctrl+click on any site in the list to pan the map to it. Charts can be downloaded as PNG.
+  </div>
+</main>
+
+<footer>
+  <div class="ft">NE England Water Quality Explorer</div>
+  <div class="fm">Data: <a href="https://environment.data.gov.uk/water-quality/view/landing" target="_blank">Environment Agency Open Data</a> &middot; OGL v3.0 &middot; Photos: Geograph/Wikimedia CC-BY-SA</div>
+</footer>
+
+</body>
+</html>
