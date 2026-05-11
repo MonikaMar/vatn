@@ -3,6 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1565a0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="WQ Explorer">
+  <link rel="apple-touch-icon" href="icon-192.png">
 <title>NE England Water Quality Explorer</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -189,6 +195,15 @@ function unhighlightCard(k){var c=document.getElementById('card-'+k);if(c)c.clas
   card.addEventListener('mouseenter',function(){highlightCard(pair[1]);if(layers[pair[1]])layers[pair[1]].setStyle({fillColor:'white',fillOpacity:.2});});
   card.addEventListener('mouseleave',function(){unhighlightCard(pair[1]);if(layers[pair[1]])layers[pair[1]].setStyle({fillOpacity:0,weight:0});});
 });
+</script>
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load',()=>{
+    navigator.serviceWorker.register('/vatn/sw.js')
+      .then(r=>console.log('SW registered'))
+      .catch(e=>console.log('SW error',e));
+  });
+}
 </script>
 </body>
 </html>

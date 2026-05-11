@@ -1,0 +1,17 @@
+{
+  "name": "NE England Water Quality Explorer",
+  "short_name": "WQ Explorer",
+  "description": "WFD water quality data explorer for NE England river catchments",
+  "start_url": "/vatn/",
+  "scope": "/vatn/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0d1f2d",
+  "theme_color": "#1565a0",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "categories": ["science", "education"],
+  "screenshots": []
+}
