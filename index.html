@@ -48,8 +48,8 @@ header{background:var(--ink);padding:0 1.5rem;height:52px;flex-shrink:0;display:
 .c-coming-title{font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;}
 .c-coming-list{font-family:var(--serif);font-size:.73rem;color:var(--muted);line-height:1.6;}
 .map-wrap{flex:1;position:relative;}
-#map{width:100%;height:100%;background:#a8c8f0!important;}
-.leaflet-container{background:#a8c8f0!important;}
+#map{width:100%;height:100%;background:#aad3df!important;}
+.leaflet-container{background:#aad3df!important;}
 .legend{position:absolute;top:.8rem;right:.8rem;z-index:500;background:rgba(255,255,255,.95);border:1px solid var(--rule);border-radius:3px;padding:.65rem .85rem;box-shadow:0 2px 8px rgba(0,0,0,.1);max-height:calc(100vh - 130px);overflow-y:auto;}
 .leg-title{font-size:.52rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
 .leg-item{display:flex;align-items:center;gap:.45rem;margin-bottom:.3rem;}
@@ -129,7 +129,7 @@ var RIVERS   = {"type":"FeatureCollection","features":[{"type":"Feature","proper
 
 var map = L.map('map',{zoomControl:true,zoomSnap:0.5,zoomDelta:0.5}).setView([54.7,-2.0],8);
 
-L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}',{attribution:'Tiles &copy; Esri',maxZoom:8}).addTo(map);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png',{attribution:'&copy; <a href="https://www.openstreetmap.org">OpenStreetMap</a> &copy; <a href="https://carto.com">CARTO</a>',subdomains:'abcd',maxZoom:19}).addTo(map);
 
 
 

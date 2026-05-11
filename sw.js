@@ -1,5 +1,5 @@
 // Water Quality Explorer — Service Worker
-const CACHE = 'wq-explorer-v6';
+const CACHE = 'wq-explorer-v7';
 const STATIC = [
   '/vatn/',
   '/vatn/index.html',
