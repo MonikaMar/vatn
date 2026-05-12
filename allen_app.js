@@ -6,7 +6,7 @@ let markers = {};
 
 // ── MAP INIT ──────────────────────────────────────────────────────────
 function initMap() {
-  leafletMap = L.map('map', { zoomControl: true }).setView([55.08, -1.62], 10);
+  leafletMap = L.map('map', { zoomControl: true }).setView([54.8418, -2.2882], 12);
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     attribution: '© OpenStreetMap © Carto',
     maxZoom: 18
@@ -506,7 +506,7 @@ document.getElementById('db').addEventListener('click', () => {
   if(!chart)return;
   const a=document.createElement('a');
   a.href=document.getElementById('cc').toDataURL('image/png');
-  a.download=`blyth_wq_${document.getElementById('ps').value.replace(/\s+/g,'_')}.png`;
+  a.download=`allen_wq_${document.getElementById('ps').value.replace(/\s+/g,'_')}.png`;
   a.click();
 });
 document.getElementById('tb').addEventListener('click', () => {
