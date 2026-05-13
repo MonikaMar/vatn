@@ -107,7 +107,13 @@ function panToSite(code) {
 
 // ── INIT CONTROLS ─────────────────────────────────────────────────────
 function init() {
-  const params = [...new Set(DATA.map(r=>r.param))].sort();
+  // Sort params by obs count desc, min 5 obs — so default is always data-rich
+  const paramCounts = {};
+  DATA.forEach(r => { if(r.value > 0) paramCounts[r.param] = (paramCounts[r.param]||0)+1; });
+  const params = Object.entries(paramCounts)
+    .filter(([p,n]) => n >= 5)
+    .sort((a,b) => b[1]-a[1])
+    .map(([p]) => p);
   document.getElementById('ps').innerHTML = params.map(p=>`<option>${p}</option>`).join('');
   document.getElementById('ps').addEventListener('change', function() { populateThresholds(this.value); });
   document.getElementById('ps-x').innerHTML = params.map(p=>`<option>${p}</option>`).join('');
